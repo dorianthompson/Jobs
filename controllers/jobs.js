@@ -13,6 +13,7 @@ const getJob = async (req,res) => {
     const job = await Job.findOne({
         _id: jobId, createdBy: userId
     })
+    
     if(!job){
         throw new NotFoundError(`No job with id ${jobId}`)
     }
